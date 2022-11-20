@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
-const fs = requrie('fs')
+const fs = requrie('fs');
 
 // create LINE SDK config from env variables
 const config = {
@@ -12,11 +12,9 @@ const config = {
 const client = new line.Client(config);
 
 // create Express app
-// about Express itself: https://expressjs.com/
 const app = express();
 
 // register a webhook handler with middleware
-// about the middleware, please refer to doc
 app.post('/linewebhook', line.middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
@@ -30,14 +28,14 @@ app.post('/linewebhook', line.middleware(config), (req, res) => {
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
+    // ignore non-text-message event; 用戶傳送不是訊息或不是文字 -> 不執行
     return Promise.resolve(null);
   }
 
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
 
-  // use reply API
+  // use reply API; 回覆 echo 中的訊息
   return client.replyMessage(event.replyToken, echo);
 }
 
