@@ -52,7 +52,7 @@ const msg = {
     message: {
       type: "text",
       id: "14353798921116",
-      text: "Japanese",
+      text: "japanese",
     },
   },
 };
