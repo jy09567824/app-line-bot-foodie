@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
-// import { bubbleCH } from './template';
+import { bubbleCH } from './template';
 
 // create LINE SDK config from env variables
 const config = {
@@ -35,8 +35,7 @@ function handleEvent(event) {
   } 
 
   if (event.message.text == "餐廳") {
-      // return client.replyMessage(event.replyToken, bubbleCH());
-      return client.replyMessage(event.replyToken, { type: 'text', text: 'Flex Message傳不出去' });
+    return client.replyMessage(event.replyToken, bubbleCH());
   }
 
   if (event.message.text == "轉盤") {
