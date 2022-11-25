@@ -31,7 +31,9 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  if (event.message.text = "餐應") {
+  const echo = { type: 'text', text: event.message.text };
+
+  if (event.message.text == "餐廳") {
     const listMsgCH = {
       "type": "bubble",
       "hero": {
@@ -128,17 +130,14 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken, listMsgCH);
   }
 
-  if (event.message.text = "轉盤") {
-    const echo = { type: 'text', text: event.message.text };
+  if (event.message.text == "轉盤") {
     return client.replyMessage(event.replyToken, echo);
   }
 
-  if (event.message.text = "List") {
-    const echo = { type: 'text', text: event.message.text };
+  if (event.message.text == "list") {
     return client.replyMessage(event.replyToken, echo);
   }
 
-  // const echo = { type: 'text', text: event.message.text };
   // return client.replyMessage(event.replyToken, echo);
 
 }
