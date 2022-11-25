@@ -1,5 +1,9 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
+const fs = require('fs');
+
+const rawdata = fs.readFileSync('./demodata.json')
+const restaurants = JSON.parse(rawdata)
 
 // create LINE SDK config from env variables
 const config = {
@@ -119,7 +123,7 @@ function handleEvent(event) {
                 },
                 {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_006.png",
                   action: {
                     type: "message",
                     label: "action",

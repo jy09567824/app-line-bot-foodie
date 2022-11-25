@@ -2,7 +2,7 @@ export const bubbleCH = () => {
   return {
     type: "flex",
     altText: "this is a flex message",
-    content: {
+    contents: {
       type: "bubble",
       hero: {
         type: "box",
@@ -30,7 +30,7 @@ export const bubbleCH = () => {
             contents: [
               {
                 type: "image",
-                url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_001.png",
                 action: {
                   type: "message",
                   label: "action",
@@ -39,7 +39,7 @@ export const bubbleCH = () => {
               },
               {
                 type: "image",
-                url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_002.png",
                 action: {
                   type: "message",
                   label: "action",
@@ -48,7 +48,7 @@ export const bubbleCH = () => {
               },
               {
                 type: "image",
-                url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_003.png",
                 action: {
                   type: "message",
                   label: "action",
@@ -63,7 +63,7 @@ export const bubbleCH = () => {
             contents: [
               {
                 type: "image",
-                url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_004.png",
                 action: {
                   type: "message",
                   label: "action",
@@ -72,7 +72,7 @@ export const bubbleCH = () => {
               },
               {
                 type: "image",
-                url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_005.png",
                 action: {
                   type: "message",
                   label: "action",
@@ -81,7 +81,7 @@ export const bubbleCH = () => {
               },
               {
                 type: "image",
-                url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_006.png",
                 action: {
                   type: "message",
                   label: "action",
