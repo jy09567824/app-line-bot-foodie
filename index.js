@@ -68,7 +68,7 @@ function handleEvent(event) {
               contents: [
                 {
                   type: "image",
-                  url: `${baseURL}/images/list_ch_001.png`,
+                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_001.png",
                   action: {
                     type: "message",
                     label: "action",
@@ -77,7 +77,7 @@ function handleEvent(event) {
                 },
                 {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_002.png",
                   action: {
                     type: "message",
                     label: "action",
@@ -86,7 +86,7 @@ function handleEvent(event) {
                 },
                 {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_003.png",
                   action: {
                     type: "message",
                     label: "action",
@@ -101,7 +101,7 @@ function handleEvent(event) {
               contents: [
                 {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_004.png",
                   action: {
                     type: "message",
                     label: "action",
@@ -110,7 +110,7 @@ function handleEvent(event) {
                 },
                 {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_005.png",
                   action: {
                     type: "message",
                     label: "action",
