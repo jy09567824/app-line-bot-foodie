@@ -31,10 +31,8 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  const echo = { type: 'text', text: event.message.text };
-
   if (event.message.text == "餐廳") {
-    return client.replyMessage(replyToken, {
+    return client.replyMessage(event.replyToken, {
       "type": "bubble",
       "hero": {
         "type": "box",
@@ -130,11 +128,11 @@ function handleEvent(event) {
   }
 
   if (event.message.text == "轉盤") {
-    return client.replyMessage(event.replyToken, echo);
+    return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
 
   if (event.message.text == "list") {
-    return client.replyMessage(event.replyToken, echo);
+    return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
 
   // return client.replyMessage(event.replyToken, echo);
