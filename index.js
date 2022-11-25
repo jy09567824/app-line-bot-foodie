@@ -126,104 +126,10 @@ const listMsgCH = {
     "paddingBottom": "none"
   }
 }
-const testMsg = {
-  "type": "bubble",
-  "header": {
-    "type": "box",
-    "layout": "horizontal",
-    "contents": [
-      {
-        "type": "image",
-        "url": "https://engineering.linecorp.com/wp-content/uploads/2018/11/linedev_logo-90x90.jpg"
-      },
-      {
-        "type": "text",
-        "text": "ＶＳ",
-        "gravity": "center",
-        "align": "center",
-        "size": "xxl",
-        "weight": "bold"
-      },
-      {
-        "type": "image",
-        "url": "https://engineering.linecorp.com/wp-content/uploads/2018/11/linedev_logo-90x90.jpg"
-      }
-    ]
-  },
-  "hero": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "89：101",
-        "align": "center",
-        "gravity": "center",
-        "size": "xxl",
-        "weight": "bold"
-      },
-      {
-        "type": "text",
-        "text": "進場人數： 1000/1200",
-        "gravity": "center",
-        "align": "center",
-        "size": "md",
-        "margin": "md"
-      }
-    ]
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "熊大廣場",
-        "weight": "bold",
-        "size": "xl",
-        "gravity": "center",
-        "align": "center"
-      },
-      {
-        "type": "text",
-        "text": "2020/01/01 17:00",
-        "align": "center",
-        "size": "md",
-        "margin": "md"
-      }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "horizontal",
-    "spacing": "sm",
-    "contents": [
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "官方網站",
-          "uri": "https://www.youtube.com/c/LINEDevelopersTaiwan/videos"
-        },
-        "style": "link"
-      },
-      {
-        "type": "button",
-        "style": "link",
-        "height": "sm",
-        "action": {
-          "type": "uri",
-          "label": "分享",
-          "uri": "https://www.facebook.com/LINEDevelopersTW"
-        }
-      }
-    ],
-    "flex": 0
-  }
-}
+
 
   if (event.message.text == "餐廳") {
-    return client.replyMessage(event.replyToken, testMsg);
+    return client.replyMessage(event.replyToken, JSON.stringify(listMsgCH));
   }
 
   if (event.message.text == "轉盤") {
