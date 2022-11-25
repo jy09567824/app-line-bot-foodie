@@ -1,8 +1,9 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
+const database = require('./database.json')
 const fs = require('fs');
 
-const rawdata = fs.readFileSync('./demodata.json')
+const rawdata = fs.readFileSync(database)
 const restaurants = JSON.parse(rawdata)
 
 // create LINE SDK config from env variables
@@ -19,6 +20,7 @@ const app = express();
 
 // serve images files
 app.use('/images', express.static('images'));
+app.use('/')
 
 // register a webhook handler with middleware
 app.post('/linewebhook', line.middleware(config), (req, res) => {
