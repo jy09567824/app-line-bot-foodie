@@ -31,107 +31,109 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  if (event.message.text == "餐廳") {
-    return client.replyMessage(event.replyToken, {
-      "type": "bubble",
-      "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
+const listMsgCH = {
+  type: "bubble",
+  hero: {
+    type: "box",
+    layout: "vertical",
+    contents: [
+      {
+        type: "text",
+        text: "請點選您要的餐廳種類",
+        style: "normal",
+        decoration: "none",
+        align: "center",
+        weight: "bold",
+        size: "lg",
+        margin: "xxl"
+      }
+    ]
+  },
+  body: {
+    type: "box",
+    layout: "vertical",
+    contents: [
+      {
+        type: "box",
+        layout: "horizontal",
+        contents: [
           {
-            "type": "text",
-            "text": "請點選您要的餐廳種類",
-            "style": "normal",
-            "decoration": "none",
-            "align": "center",
-            "weight": "bold",
-            "size": "lg",
-            "margin": "xxl"
+            type: "image",
+            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            action: {
+              type: "message",
+              label: "action",
+              text: "中式餐廳"
+            }
+          },
+          {
+            type: "image",
+            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            action: {
+              type: "message",
+              label: "action",
+              text: "日式餐廳"
+            }
+          },
+          {
+            type: "image",
+            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            action: {
+              type: "message",
+              label: "action",
+              text: "西式餐廳"
+            }
           }
         ]
       },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
+      {
+        type: "box",
+        layout: "horizontal",
+        contents: [
           {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                "action": {
-                  "type": "message",
-                  "label": "action",
-                  "text": "中式餐廳"
-                }
-              },
-              {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                "action": {
-                  "type": "message",
-                  "label": "action",
-                  "text": "日式餐廳"
-                }
-              },
-              {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                "action": {
-                  "type": "message",
-                  "label": "action",
-                  "text": "西式餐廳"
-                }
-              }
-            ]
+            type: "image",
+            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            action: {
+              type: "message",
+              label: "action",
+              text: "咖啡廳"
+            }
           },
           {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                "action": {
-                  "type": "message",
-                  "label": "action",
-                  "text": "咖啡廳"
-                }
-              },
-              {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                "action": {
-                  "type": "message",
-                  "label": "action",
-                  "text": "美式餐廳"
-                }
-              },
-              {
-                "type": "image",
-                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-                "action": {
-                  "type": "message",
-                  "label": "action",
-                  "text": "異國風味"
-                }
-              }
-            ]
+            type: "image",
+            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            action: {
+              type: "message",
+              label: "action",
+              text: "美式餐廳"
+            }
+          },
+          {
+            type: "image",
+            url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+            action: {
+              type: "message",
+              label: "action",
+              text: "異國風味"
+            }
           }
-        ],
-        "paddingTop": "none",
-        "paddingBottom": "none"
+        ]
       }
-    });
+    ],
+    paddingTop: "none",
+    paddingBottom: "none"
+  }
+}
+
+  if (event.message.text == "餐廳") {
+    return client.replyMessage(event.replyToken, listMsgCH);
   }
 
   if (event.message.text == "轉盤") {
     return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
 
-  if (event.message.text == "list") {
+  if (event.message.text == "Restaurant") {
     return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
 
