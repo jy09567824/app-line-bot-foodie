@@ -126,9 +126,59 @@ const listMsgCH = {
     "paddingBottom": "none"
   }
 }
+const testMsg = {
+  "type": "bubble",
+  "styles": {
+    "header": {
+      "backgroundColor": "#ffaaaa"
+    },
+    "body": {
+      "backgroundColor": "#aaffaa"
+    },
+    "footer": {
+      "backgroundColor": "#aaaaff"
+    }
+  },
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "header"
+      }
+    ]
+  },
+  "hero": {
+    "type": "image",
+    "url": "https://example.com/flex/images/image.jpg",
+    "size": "full",
+    "aspectRatio": "2:1"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "body"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "footer"
+      }
+    ]
+  }
+}
 
   if (event.message.text == "餐廳") {
-    return client.replyMessage(event.replyToken, listMsgCH);
+    return client.replyMessage(event.replyToken, testMsg);
   }
 
   if (event.message.text == "轉盤") {
