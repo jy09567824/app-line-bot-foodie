@@ -31,7 +31,7 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-const listMsgCH = { type: 'test', text: 'testtestset' }
+const listMsgCH = { type: 'text', text: 'testtestset' }
 
   if (event.message.text == "餐廳") {
     return client.replyMessage(event.replyToken, listMsgCH);
