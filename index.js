@@ -1,6 +1,5 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
-// import { bubbleCH } from './template';
 
 // create LINE SDK config from env variables
 const config = {
@@ -13,6 +12,9 @@ const client = new line.Client(config);
 
 // create Express app
 const app = express();
+
+// serve images files
+app.use('/images', express.static('images'));
 
 // register a webhook handler with middleware
 app.post('/linewebhook', line.middleware(config), (req, res) => {
@@ -66,7 +68,7 @@ function handleEvent(event) {
               contents: [
                 {
                   type: "image",
-                  url: "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  url: `${baseURL}/images/list_ch_001.png`,
                   action: {
                     type: "message",
                     label: "action",
