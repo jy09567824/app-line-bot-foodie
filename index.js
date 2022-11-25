@@ -38,7 +38,7 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken, {
       type: "flex",
       altText: "this is a flex message",
-      content: {
+      contents: {
         type: "bubble",
         hero: {
           type: "box",
