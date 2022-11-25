@@ -1,5 +1,6 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
+const fs = requrie('fs');
 
 // create LINE SDK config from env variables
 const config = {
@@ -11,11 +12,9 @@ const config = {
 const client = new line.Client(config);
 
 // create Express app
-// about Express itself: https://expressjs.com/
 const app = express();
 
 // register a webhook handler with middleware
-// about the middleware, please refer to doc
 app.post('/linewebhook', line.middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
@@ -29,15 +28,120 @@ app.post('/linewebhook', line.middleware(config), (req, res) => {
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
+    // ignore non-text-message event; 用戶傳送不是訊息或不是文字 -> 不執行
     return Promise.resolve(null);
   }
 
-  // create a echoing text message
-  const echo = { type: 'text', text: event.message.text };
+  // if (event.message.text = "餐應") {
+  //   const listMsgCH = {
+  //     "type": "bubble",
+  //     "hero": {
+  //       "type": "box",
+  //       "layout": "vertical",
+  //       "contents": [
+  //         {
+  //           "type": "text",
+  //           "text": "請點選您要的餐廳種類",
+  //           "style": "normal",
+  //           "decoration": "none",
+  //           "align": "center",
+  //           "weight": "bold",
+  //           "size": "lg",
+  //           "margin": "xxl"
+  //         }
+  //       ]
+  //     },
+  //     "body": {
+  //       "type": "box",
+  //       "layout": "vertical",
+  //       "contents": [
+  //         {
+  //           "type": "box",
+  //           "layout": "horizontal",
+  //           "contents": [
+  //             {
+  //               "type": "image",
+  //               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  //               "action": {
+  //                 "type": "message",
+  //                 "label": "action",
+  //                 "text": "中式餐廳"
+  //               }
+  //             },
+  //             {
+  //               "type": "image",
+  //               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  //               "action": {
+  //                 "type": "message",
+  //                 "label": "action",
+  //                 "text": "日式餐廳"
+  //               }
+  //             },
+  //             {
+  //               "type": "image",
+  //               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  //               "action": {
+  //                 "type": "message",
+  //                 "label": "action",
+  //                 "text": "西式餐廳"
+  //               }
+  //             }
+  //           ]
+  //         },
+  //         {
+  //           "type": "box",
+  //           "layout": "horizontal",
+  //           "contents": [
+  //             {
+  //               "type": "image",
+  //               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  //               "action": {
+  //                 "type": "message",
+  //                 "label": "action",
+  //                 "text": "咖啡廳"
+  //               }
+  //             },
+  //             {
+  //               "type": "image",
+  //               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  //               "action": {
+  //                 "type": "message",
+  //                 "label": "action",
+  //                 "text": "美式餐廳"
+  //               }
+  //             },
+  //             {
+  //               "type": "image",
+  //               "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  //               "action": {
+  //                 "type": "message",
+  //                 "label": "action",
+  //                 "text": "異國風味"
+  //               }
+  //             }
+  //           ]
+  //         }
+  //       ],
+  //       "paddingTop": "none",
+  //       "paddingBottom": "none"
+  //     }
+  //   }
+  //   return client.replyMessage(event.replyToken, listMsgCH);
+  // }
 
-  // use reply API
+  // if (event.message.text = "轉盤") {
+  //   const echo = { type: 'text', text: event.message.text };
+  //   return client.replyMessage(event.replyToken, echo);
+  // }
+
+  // if (event.message.text = "List") {
+  //   const echo = { type: 'text', text: event.message.text };
+  //   return client.replyMessage(event.replyToken, echo);
+  // }
+
+  const echo = { type: 'text', text: event.message.text };
   return client.replyMessage(event.replyToken, echo);
+
 }
 
 // listen on port
