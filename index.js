@@ -181,24 +181,30 @@ function handleEvent(event) {
   switch (event.message.text) {
     case "餐廳":
       return client.replyMessage(event.replyToken, restaurantTypeMsg);
+    case "Restaurant" || "restaurant":
+      return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
+    case "轉盤":
+      return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
+    case "中式餐廳" || "中餐":
+      return client.replyMessage(event.replyToken, replyFormat);
   }
 
   // if (event.message.text == "餐廳") {
   //   return client.replyMessage(event.replyToken, restaurantTypeMsg);
   // }
 
-  if (event.message.text == "轉盤") {
-    return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
-  }
+  // if (event.message.text == "轉盤") {
+  //   return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
+  // }
 
-  if (event.message.text == "Restaurant") {
-    return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
-  }
+  // if (event.message.text == "Restaurant") {
+  //   return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
+  // }
 
-  if (event.message.text == "中式餐廳") {
-    getCategoryArray("japanese")
-    return client.replyMessage(event.replyToken, replyFormat)
-  }
+  // if (event.message.text == "中式餐廳") {
+  //   getCategoryArray("japanese")
+  //   return client.replyMessage(event.replyToken, replyFormat)
+  // }
 }
 
 // listen on port
