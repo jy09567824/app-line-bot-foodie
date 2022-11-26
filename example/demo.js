@@ -4,7 +4,7 @@ const fs = require('fs')
 const rawdata = fs.readFileSync('./demodata.json')
 const restaurants = JSON.parse(rawdata)
 
-let replyFormat = {
+let carouselMsg = {
   type: "flex",
   altText: "carousel flex message",
   contents: {
@@ -285,10 +285,12 @@ let replyFormat = {
 function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
+    let replyFormat = ''
+    replyFormat = carouselMsg
     let carouselArray = getRandomArrayElements(filterData, 3)
     carouselArray.forEach(element => {
       replyFormat.contents.contents.push(element.message)   
-    });
+    }); 
     console.log(replyFormat)
   } catch (error) {
     console.log(error)

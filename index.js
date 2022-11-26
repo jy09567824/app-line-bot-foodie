@@ -14,6 +14,8 @@ let carouselMsg = {
   }
 }
 
+let replyFormat = ''
+
 // 從陣列中隨機取出 n 筆元素
 function getRandomArrayElements(arr, count) {
   var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
