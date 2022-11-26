@@ -177,15 +177,16 @@ function handleEvent(event) {
   }
 
   if (event.message.text == "轉盤") {
-    return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
+    return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
   }
 
   if (event.message.text == "Restaurant") {
-    return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
+    return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
   }
 
   if (event.message.text == "中式餐廳") {
-    return client.replyMessage(event.replyToken, getCategoryArray("japanese"))
+    getCategoryArray("japanese")
+    return client.replyMessage(event.replyToken, { type: 'text', text: '這是中餐館' })
   }
 }
 
