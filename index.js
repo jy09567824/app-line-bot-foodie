@@ -15,7 +15,7 @@ let carouselMsg = {
   }
 }
 
-let replyFormat = ''
+let replyFormat = {}
 
 const restaurantTypeMsg = {
   type: "flex",
@@ -132,9 +132,9 @@ function getRandomArrayElements(arr, count) {
 function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    replyFormat = ''
-    replyFormat = carouselMsg
-    let carouselArray = getRandomArrayElements(filterData, 3)
+    replyFormat = {};
+    replyFormat = carouselMsg;
+    let carouselArray = getRandomArrayElements(filterData, 3);
     carouselArray.forEach(element => {
       replyFormat.contents.contents.push(element.message)   
     }); 
@@ -181,11 +181,14 @@ function handleEvent(event) {
   switch (event.message.text) {
     case "餐廳":
       return client.replyMessage(event.replyToken, restaurantTypeMsg);
-    case "Restaurant" || "restaurant":
+    case "Restaurant":
+    case "restaurant":
       return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
     case "轉盤":
       return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
-    case "中式餐廳" || "中餐":
+    case "中式餐廳":
+    case "中餐":
+      getCategoryArray("japanese")
       return client.replyMessage(event.replyToken, replyFormat);
   }
 
