@@ -62,7 +62,7 @@ function handleEvent(event) {
   if (event.message.text == "餐廳") {
     return client.replyMessage(event.replyToken, {
       type: "flex",
-      altText: "this is a flex message",
+      altText: "請選擇您要的餐廳種類：中式餐廳、日式餐廳、西式⋯⋯",
       contents: {
         type: "bubble",
         hero: {
@@ -80,6 +80,7 @@ function handleEvent(event) {
               margin: "xxl",
             },
           ],
+          backgroundColor: "#f7f4ef"
         },
         body: {
           type: "box",
@@ -154,6 +155,7 @@ function handleEvent(event) {
           ],
           paddingTop: "none",
           paddingBottom: "none",
+          backgroundColor: "#f7f4ef"
         },
       },
     });
