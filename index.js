@@ -132,16 +132,14 @@ function getRandomArrayElements(arr, count) {
 function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    replyFormat = {};
-    replyFormat = carouselMsg;
     let carouselArray = getRandomArrayElements(filterData, 3);
+    replyFormat = carouselMsg;
     carouselArray.forEach(element => {
       replyFormat.contents.contents.push(element.message)   
     }); 
   } catch (error) {
     console.log(error)
   }
-  return replyFormat
 }
 
 // create LINE SDK config from env variables
@@ -189,21 +187,19 @@ function handleEvent(event) {
     case "中式餐廳":
     case "中餐":
       getCategoryArray("japanese")
-      return client.replyMessage(event.replyToken, replyFormat);
+      client.replyMessage(event.replyToken, replyFormat)
+      return 
   }
 
   // if (event.message.text == "餐廳") {
   //   return client.replyMessage(event.replyToken, restaurantTypeMsg);
   // }
-
   // if (event.message.text == "轉盤") {
   //   return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
   // }
-
   // if (event.message.text == "Restaurant") {
   //   return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
   // }
-
   // if (event.message.text == "中式餐廳") {
   //   getCategoryArray("japanese")
   //   return client.replyMessage(event.replyToken, replyFormat)
