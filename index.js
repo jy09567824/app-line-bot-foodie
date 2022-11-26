@@ -33,7 +33,8 @@ const config = {
 
 // create LINE SDK client
 const client = new line.Client(config);
-
+// base URL for webhook server
+const baseURL = process.env.BASE_URL;
 // create Express app
 const app = express();
 
@@ -170,5 +171,13 @@ function handleEvent(event) {
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`listening on ${port}`);
+  if (baseURL) {
+    console.log(`listening on ${baseURL}:${port}/callback`);
+  } else {
+    console.log("It seems that BASE_URL is not set. Connecting to ngrok...")
+    ngrok.connect(port).then(url => {
+      baseURL = url;
+      console.log(`listening on ${baseURL}/callback`);
+    }).catch(console.error);
+  }
 });
