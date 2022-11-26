@@ -5,25 +5,25 @@ const ngrok = require('ngrok');
 // const restaurants = JSON.parse(database)
 
 // 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆
-function getCategoryArray(category) {
-  try {
-    const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    console.log(getRandomArrayElements(filterData, 3))    
-  } catch (error) {
-    console.log(error)
-  }
-}
+// function getCategoryArray(category) {
+//   try {
+//     const filterData = restaurants.filter(restaurant => restaurant.category == category)
+//     console.log(getRandomArrayElements(filterData, 3))    
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 // 從陣列中隨機取出 n 筆元素
-function getRandomArrayElements(arr, count) {
-  var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
-  while (i-- > min) {
-      index = Math.floor((i + 1) * Math.random());
-      temp = shuffled[index];
-      shuffled[index] = shuffled[i];
-      shuffled[i] = temp;
-  }
-  return shuffled.slice(min);
-}
+// function getRandomArrayElements(arr, count) {
+//   var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+//   while (i-- > min) {
+//       index = Math.floor((i + 1) * Math.random());
+//       temp = shuffled[index];
+//       shuffled[index] = shuffled[i];
+//       shuffled[i] = temp;
+//   }
+//   return shuffled.slice(min);
+// }
 
 // create LINE SDK config from env variables
 const config = {
@@ -39,7 +39,6 @@ const app = express();
 
 // serve images files
 app.use('/images', express.static('images'));
-app.use('/')
 
 // register a webhook handler with middleware
 app.post('/linewebhook', line.middleware(config), (req, res) => {
