@@ -165,9 +165,6 @@ function handleEvent(event) {
   if (event.message.text == "Restaurant") {
     return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
-
-  // return client.replyMessage(event.replyToken, echo);
-
 }
 
 // listen on port
