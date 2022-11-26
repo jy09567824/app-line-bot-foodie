@@ -1,5 +1,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
+const fs = require('fs');
+const rawdata = fs.readFileSync('./database.json')
 // const ngrok = require('ngrok');
 
 // const restaurants = JSON.parse(database)
