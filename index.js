@@ -29,7 +29,8 @@ function getRandomArrayElements(arr, count) {
 function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    let replyFormat = carouselMsg
+    let replyFormat = ''
+    replyFormat = carouselMsg
     let carouselArray = getRandomArrayElements(filterData, 3)
     carouselArray.forEach(element => {
       replyFormat.contents.contents.push(element.message)   
