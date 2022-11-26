@@ -186,7 +186,7 @@ function handleEvent(event) {
 
   if (event.message.text == "中式餐廳") {
     getCategoryArray("japanese")
-    return client.replyMessage(event.replyToken, { type: 'text', text: '這是中餐館' })
+    return client.replyMessage(event.replyToken, replyFormat)
   }
 }
 
