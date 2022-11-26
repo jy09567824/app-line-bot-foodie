@@ -1,12 +1,11 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const fs = require('fs');
-// const ngrok = require('ngrok');
 
 const rawdata = fs.readFileSync('./database.json')
 const restaurants = JSON.parse(rawdata)
 
-let replyFormat = {
+let carouselMsg = {
   type: "flex",
   altText: "carousel flex message",
   contents: {
@@ -15,19 +14,6 @@ let replyFormat = {
   }
 }
 
-// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 Reply 格式訊息
-function getCategoryArray(category) {
-  try {
-    const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    let carouselArray = getRandomArrayElements(filterData, 3)
-    carouselArray.forEach(element => {
-      replyFormat.contents.contents.push(element.message)   
-    }); 
-  } catch (error) {
-    console.log(error)
-  }
-  return replyFormat
-}
 // 從陣列中隨機取出 n 筆元素
 function getRandomArrayElements(arr, count) {
   var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
@@ -38,6 +24,20 @@ function getRandomArrayElements(arr, count) {
       shuffled[i] = temp;
   }
   return shuffled.slice(min);
+}
+// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 Reply 格式訊息
+function getCategoryArray(category) {
+  try {
+    const filterData = restaurants.filter(restaurant => restaurant.category == category)
+    let replyFormat = carouselMsg
+    let carouselArray = getRandomArrayElements(filterData, 3)
+    carouselArray.forEach(element => {
+      replyFormat.contents.contents.push(element.message)   
+    }); 
+  } catch (error) {
+    console.log(error)
+  }
+  return replyFormat
 }
 
 // create LINE SDK config from env variables
