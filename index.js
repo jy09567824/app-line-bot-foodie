@@ -188,7 +188,7 @@ function handleEvent(event) {
     case "中餐":
       getCategoryArray("japanese")
       client.replyMessage(event.replyToken, replyMsg)
-      let replyMsg = {}
+      replyMsg = {}
       return 
   }
 
