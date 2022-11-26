@@ -1,10 +1,29 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
-const database = require('./database.json')
-const fs = require('fs');
+const ngrok = require('ngrok');
 
-const rawdata = fs.readFileSync(database)
-const restaurants = JSON.parse(rawdata)
+// const restaurants = JSON.parse(database)
+
+// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆
+function getCategoryArray(category) {
+  try {
+    const filterData = restaurants.filter(restaurant => restaurant.category == category)
+    console.log(getRandomArrayElements(filterData, 3))    
+  } catch (error) {
+    console.log(error)
+  }
+}
+// 從陣列中隨機取出 n 筆元素
+function getRandomArrayElements(arr, count) {
+  var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+  while (i-- > min) {
+      index = Math.floor((i + 1) * Math.random());
+      temp = shuffled[index];
+      shuffled[index] = shuffled[i];
+      shuffled[i] = temp;
+  }
+  return shuffled.slice(min);
+}
 
 // create LINE SDK config from env variables
 const config = {
@@ -32,8 +51,6 @@ app.post('/linewebhook', line.middleware(config), (req, res) => {
       res.status(500).end();
     });
 });
-
-
 
 // event handler
 function handleEvent(event) {
