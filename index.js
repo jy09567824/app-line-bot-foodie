@@ -179,11 +179,11 @@ function handleEvent(event) {
     return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
 
-  if (event.message.text == "Restaurant") {
+  if (event.message.text == "Restaurant" || "list") {
     return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
   }
 
-  if (event.message.text == "中式餐廳") {
+  if (event.message.text == "中式餐廳" || "japanese") {
     return client.replyMessage(event.replyToken, replyFormat)
   }
 }

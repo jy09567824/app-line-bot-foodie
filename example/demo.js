@@ -6,8 +6,11 @@ const restaurants = JSON.parse(rawdata)
 
 let replyFormat = {
   type: "flex",
-  altText: "",
-  contents: []
+  altText: "carousel flex message",
+  contents: {
+    type: "carousel",
+    contents: []
+  }
 }
 
 // let carousalMsg = {
@@ -284,7 +287,7 @@ function getCategoryArray(category) {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3)
     carouselArray.forEach(element => {
-      replyFormat.contents.push(element.message)   
+      replyFormat.contents.contents.push(element.message)   
     });
     console.log(replyFormat)
   } catch (error) {
