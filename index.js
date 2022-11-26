@@ -5,6 +5,7 @@ const fs = require('fs');
 const rawdata = fs.readFileSync('./database.json')
 const restaurants = JSON.parse(rawdata)
 
+// Data 
 let carouselMsg = {
   type: "flex",
   altText: "carousel flex message",
@@ -15,6 +16,106 @@ let carouselMsg = {
 }
 
 let replyFormat = ''
+
+const restaurantTypeMsg = {
+  type: "flex",
+  altText: "請選擇您要的餐廳種類：中式餐廳、日式餐廳、西式⋯⋯",
+  contents: {
+    type: "bubble",
+    hero: {
+      type: "box",
+      layout: "vertical",
+      contents: [
+        {
+          type: "text",
+          text: "請點選您要的餐廳種類",
+          style: "normal",
+          decoration: "none",
+          align: "center",
+          weight: "bold",
+          size: "lg",
+          margin: "xxl",
+        },
+      ],
+      backgroundColor: "#f7f4ef"
+    },
+    body: {
+      type: "box",
+      layout: "vertical",
+      contents: [
+        {
+          type: "box",
+          layout: "horizontal",
+          contents: [
+            {
+              type: "image",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_001.png",
+              action: {
+                type: "message",
+                label: "action",
+                text: "中式餐廳",
+              },
+            },
+            {
+              type: "image",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_002.png",
+              action: {
+                type: "message",
+                label: "action",
+                text: "日式餐廳",
+              },
+            },
+            {
+              type: "image",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_003.png",
+              action: {
+                type: "message",
+                label: "action",
+                text: "西式餐廳",
+              },
+            },
+          ],
+        },
+        {
+          type: "box",
+          layout: "horizontal",
+          contents: [
+            {
+              type: "image",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_004.png",
+              action: {
+                type: "message",
+                label: "action",
+                text: "咖啡廳",
+              },
+            },
+            {
+              type: "image",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_005.png",
+              action: {
+                type: "message",
+                label: "action",
+                text: "美式餐廳",
+              },
+            },
+            {
+              type: "image",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_006.png",
+              action: {
+                type: "message",
+                label: "action",
+                text: "異國風味",
+              },
+            },
+          ],
+        },
+      ],
+      paddingTop: "none",
+      paddingBottom: "none",
+      backgroundColor: "#f7f4ef"
+    },
+  },
+}
 
 // 從陣列中隨機取出 n 筆元素
 function getRandomArrayElements(arr, count) {
@@ -77,107 +178,14 @@ function handleEvent(event) {
     return Promise.resolve(null);
   } 
 
-  if (event.message.text == "餐廳") {
-    return client.replyMessage(event.replyToken, {
-      type: "flex",
-      altText: "請選擇您要的餐廳種類：中式餐廳、日式餐廳、西式⋯⋯",
-      contents: {
-        type: "bubble",
-        hero: {
-          type: "box",
-          layout: "vertical",
-          contents: [
-            {
-              type: "text",
-              text: "請點選您要的餐廳種類",
-              style: "normal",
-              decoration: "none",
-              align: "center",
-              weight: "bold",
-              size: "lg",
-              margin: "xxl",
-            },
-          ],
-          backgroundColor: "#f7f4ef"
-        },
-        body: {
-          type: "box",
-          layout: "vertical",
-          contents: [
-            {
-              type: "box",
-              layout: "horizontal",
-              contents: [
-                {
-                  type: "image",
-                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_001.png",
-                  action: {
-                    type: "message",
-                    label: "action",
-                    text: "中式餐廳",
-                  },
-                },
-                {
-                  type: "image",
-                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_002.png",
-                  action: {
-                    type: "message",
-                    label: "action",
-                    text: "日式餐廳",
-                  },
-                },
-                {
-                  type: "image",
-                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_003.png",
-                  action: {
-                    type: "message",
-                    label: "action",
-                    text: "西式餐廳",
-                  },
-                },
-              ],
-            },
-            {
-              type: "box",
-              layout: "horizontal",
-              contents: [
-                {
-                  type: "image",
-                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_004.png",
-                  action: {
-                    type: "message",
-                    label: "action",
-                    text: "咖啡廳",
-                  },
-                },
-                {
-                  type: "image",
-                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_005.png",
-                  action: {
-                    type: "message",
-                    label: "action",
-                    text: "美式餐廳",
-                  },
-                },
-                {
-                  type: "image",
-                  url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_006.png",
-                  action: {
-                    type: "message",
-                    label: "action",
-                    text: "異國風味",
-                  },
-                },
-              ],
-            },
-          ],
-          paddingTop: "none",
-          paddingBottom: "none",
-          backgroundColor: "#f7f4ef"
-        },
-      },
-    });
+  switch (event.message.text) {
+    case "餐廳":
+      return client.replyMessage(event.replyToken, restaurantTypeMsg);
   }
+
+  // if (event.message.text == "餐廳") {
+  //   return client.replyMessage(event.replyToken, restaurantTypeMsg);
+  // }
 
   if (event.message.text == "轉盤") {
     return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
@@ -202,3 +210,4 @@ app.listen(port, () => {
     console.log("It seems that BASE_URL is not set. Connecting to ngrok...")
   }
 });
+
