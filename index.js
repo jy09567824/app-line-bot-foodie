@@ -8,8 +8,11 @@ const restaurants = JSON.parse(rawdata)
 
 let replyFormat = {
   type: "flex",
-  altText: "",
-  contents: {}
+  altText: "carousel flex message",
+  contents: {
+    type: "carousel",
+    contents: []
+  }
 }
 
 // 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 Reply 格式訊息
@@ -18,7 +21,7 @@ function getCategoryArray(category) {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3)
     carouselArray.forEach(element => {
-      replyFormat.contents.push(element.message)   
+      replyFormat.contents.contents.push(element.message)   
     }); 
   } catch (error) {
     console.log(error)
