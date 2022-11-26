@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
-const ngrok = require('ngrok');
+// const ngrok = require('ngrok');
 
 // const restaurants = JSON.parse(database)
 
@@ -175,9 +175,5 @@ app.listen(port, () => {
     console.log(`listening on ${baseURL}:${port}/callback`);
   } else {
     console.log("It seems that BASE_URL is not set. Connecting to ngrok...")
-    ngrok.connect(port).then(url => {
-      baseURL = url;
-      console.log(`listening on ${baseURL}/callback`);
-    }).catch(console.error);
   }
 });
