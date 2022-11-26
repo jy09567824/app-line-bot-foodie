@@ -1,16 +1,25 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const fs = require('fs');
-const rawdata = fs.readFileSync('./database.json')
 // const ngrok = require('ngrok');
 
-// const restaurants = JSON.parse(database)
+const rawdata = fs.readFileSync('./database.json')
+const restaurants = JSON.parse(rawdata)
 
-// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆
+let replyFormat = {
+  type: "flex",
+  altText: "",
+  contents: {}
+}
+
+// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 Reply 格式訊息
 function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    console.log(getRandomArrayElements(filterData, 3))    
+    let carouselArray = getRandomArrayElements(filterData, 3)
+    carouselArray.forEach(element => {
+      replyFormat.contents.push(element.message)   
+    }); 
   } catch (error) {
     console.log(error)
   }
@@ -169,6 +178,10 @@ function handleEvent(event) {
 
   if (event.message.text == "Restaurant") {
     return client.replyMessage(event.replyToken, { type: 'text', text: event.message.text });
+  }
+
+  if (event.message.text == "中式餐廳") {
+    return client.replyMessage(event.replyToken, replyFormat)
   }
 }
 

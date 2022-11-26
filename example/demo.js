@@ -4,11 +4,289 @@ const fs = require('fs')
 const rawdata = fs.readFileSync('./demodata.json')
 const restaurants = JSON.parse(rawdata)
 
-// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆
+let replyFormat = {
+  type: "flex",
+  altText: "",
+  contents: []
+}
+
+// let carousalMsg = {
+//   "type": "carousel",
+//   "contents": [
+//     {
+//       "type": "bubble",
+//       "size": "micro",
+//       "hero": {
+//         "type": "image",
+//         "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip10.jpg",
+//         "size": "full",
+//         "aspectMode": "cover",
+//         "aspectRatio": "320:213"
+//       },
+//       "body": {
+//         "type": "box",
+//         "layout": "vertical",
+//         "contents": [
+//           {
+//             "type": "text",
+//             "text": "Brown Cafe",
+//             "weight": "bold",
+//             "size": "sm",
+//             "wrap": true
+//           },
+//           {
+//             "type": "box",
+//             "layout": "baseline",
+//             "contents": [
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+//               },
+//               {
+//                 "type": "text",
+//                 "text": "4.0",
+//                 "size": "xs",
+//                 "color": "#8c8c8c",
+//                 "margin": "md",
+//                 "flex": 0
+//               }
+//             ]
+//           },
+//           {
+//             "type": "box",
+//             "layout": "vertical",
+//             "contents": [
+//               {
+//                 "type": "box",
+//                 "layout": "baseline",
+//                 "spacing": "sm",
+//                 "contents": [
+//                   {
+//                     "type": "text",
+//                     "text": "東京旅行",
+//                     "wrap": true,
+//                     "color": "#8c8c8c",
+//                     "size": "xs",
+//                     "flex": 5
+//                   }
+//                 ]
+//               }
+//             ]
+//           }
+//         ],
+//         "spacing": "sm",
+//         "paddingAll": "13px"
+//       }
+//     },
+//     {
+//       "type": "bubble",
+//       "size": "micro",
+//       "hero": {
+//         "type": "image",
+//         "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip11.jpg",
+//         "size": "full",
+//         "aspectMode": "cover",
+//         "aspectRatio": "320:213"
+//       },
+//       "body": {
+//         "type": "box",
+//         "layout": "vertical",
+//         "contents": [
+//           {
+//             "type": "text",
+//             "text": "Brow&Cony's Restaurant",
+//             "weight": "bold",
+//             "size": "sm",
+//             "wrap": true
+//           },
+//           {
+//             "type": "box",
+//             "layout": "baseline",
+//             "contents": [
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+//               },
+//               {
+//                 "type": "text",
+//                 "text": "4.0",
+//                 "size": "sm",
+//                 "color": "#8c8c8c",
+//                 "margin": "md",
+//                 "flex": 0
+//               }
+//             ]
+//           },
+//           {
+//             "type": "box",
+//             "layout": "vertical",
+//             "contents": [
+//               {
+//                 "type": "box",
+//                 "layout": "baseline",
+//                 "spacing": "sm",
+//                 "contents": [
+//                   {
+//                     "type": "text",
+//                     "text": "東京旅行",
+//                     "wrap": true,
+//                     "color": "#8c8c8c",
+//                     "size": "xs",
+//                     "flex": 5
+//                   }
+//                 ]
+//               }
+//             ]
+//           }
+//         ],
+//         "spacing": "sm",
+//         "paddingAll": "13px"
+//       }
+//     },
+//     {
+//       "type": "bubble",
+//       "size": "micro",
+//       "hero": {
+//         "type": "image",
+//         "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip12.jpg",
+//         "size": "full",
+//         "aspectMode": "cover",
+//         "aspectRatio": "320:213"
+//       },
+//       "body": {
+//         "type": "box",
+//         "layout": "vertical",
+//         "contents": [
+//           {
+//             "type": "text",
+//             "text": "Tata",
+//             "weight": "bold",
+//             "size": "sm"
+//           },
+//           {
+//             "type": "box",
+//             "layout": "baseline",
+//             "contents": [
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+//               },
+//               {
+//                 "type": "icon",
+//                 "size": "xs",
+//                 "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+//               },
+//               {
+//                 "type": "text",
+//                 "text": "4.0",
+//                 "size": "sm",
+//                 "color": "#8c8c8c",
+//                 "margin": "md",
+//                 "flex": 0
+//               }
+//             ]
+//           },
+//           {
+//             "type": "box",
+//             "layout": "vertical",
+//             "contents": [
+//               {
+//                 "type": "box",
+//                 "layout": "baseline",
+//                 "spacing": "sm",
+//                 "contents": [
+//                   {
+//                     "type": "text",
+//                     "text": "東京旅行",
+//                     "wrap": true,
+//                     "color": "#8c8c8c",
+//                     "size": "xs",
+//                     "flex": 5
+//                   }
+//                 ]
+//               }
+//             ]
+//           }
+//         ],
+//         "spacing": "sm",
+//         "paddingAll": "13px"
+//       }
+//     }
+//   ]
+// }
+
+// replyFormat.contents = carousalMsg
+// console.log(replyFormat)
+
+
+// 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 LINE 訊息格式
+
 function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
-    console.log(getRandomArrayElements(filterData, 3))    
+    let carouselArray = getRandomArrayElements(filterData, 3)
+    carouselArray.forEach(element => {
+      replyFormat.contents.push(element.message)   
+    });
+    console.log(replyFormat)
   } catch (error) {
     console.log(error)
   }
