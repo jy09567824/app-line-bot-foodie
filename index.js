@@ -15,7 +15,7 @@ let carouselMsg = {
   }
 }
 
-let replyFormat = {}
+let replyMsg = {}
 
 const restaurantTypeMsg = {
   type: "flex",
@@ -133,9 +133,9 @@ function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3);
-    replyFormat = carouselMsg;
+    replyMsg = carouselMsg;
     carouselArray.forEach(element => {
-      replyFormat.contents.contents.push(element.message)   
+      replyMsg.contents.contents.push(element.message)   
     }); 
   } catch (error) {
     console.log(error)
@@ -187,7 +187,8 @@ function handleEvent(event) {
     case "中式餐廳":
     case "中餐":
       getCategoryArray("japanese")
-      client.replyMessage(event.replyToken, replyFormat)
+      client.replyMessage(event.replyToken, replyMsg)
+      let replyMsg = {}
       return 
   }
 
@@ -202,7 +203,7 @@ function handleEvent(event) {
   // }
   // if (event.message.text == "中式餐廳") {
   //   getCategoryArray("japanese")
-  //   return client.replyMessage(event.replyToken, replyFormat)
+  //   return client.replyMessage(event.replyToken, replyMsg)
   // }
 }
 
