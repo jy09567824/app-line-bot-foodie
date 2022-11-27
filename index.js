@@ -231,7 +231,7 @@ function getCategoryArray(category, database) {
   try {
     const carouselMsg = {
       type: "flex",
-      altText: "carousel flex message",
+      altText: "Here are the 3 options for you. Click in the picture card to view the information...",
       contents: {
         type: "carousel",
         contents: []
