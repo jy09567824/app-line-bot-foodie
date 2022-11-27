@@ -106,11 +106,13 @@ const restaurantTypeMsgCH = {
     },
   },
 }
-const beforeCarouselMsg = { type: 'text', text: `這邊是為您推薦的三個選項\n提示：點擊圖文選單可以參照地址\n祝您享用愉快、有個美好的一天！
-Here are the 3 options for you.
-Click in the picture card to view the address.
-Have a nice meal & wish you a good day.
-` }
+// const beforeCarouselMsg = { type: 'text', text: `這邊是為您推薦的三個選項
+// 提示：點擊圖文選單可以參照地址
+// 祝您享用愉快、有個美好的一天！
+// Here are the 3 options for you.
+// Click in the picture card to view the address.
+// Have a nice meal & wish you a good day.
+// ` }
 
 // 從陣列中隨機取出 n 筆元素
 function getRandomArrayElements(arr, count) {
@@ -209,7 +211,7 @@ function handleEvent(event) {
       break;
     case "轉盤":
       getRandomArray()
-      client.replyMessage(event.replyToken, beforeCarouselMsg);
+      // client.replyMessage(event.replyToken, beforeCarouselMsg);
       client.replyMessage(event.replyToken, replyMsg);
       break;
     case "中式餐廳":
@@ -217,21 +219,13 @@ function handleEvent(event) {
       getCategoryArray("japanese")
       client.replyMessage(event.replyToken, replyMsg)
       break;
+    case "日式餐廳":
+    case "日本料理":
+    case "日式":
+      getCategoryArray("japanese")
+      client.replyMessage(event.replyToken, replyMsg)
+      break;
   }
-
-  // if (event.message.text == "餐廳") {
-  //   return client.replyMessage(event.replyToken, restaurantTypeMsg);
-  // }
-  // if (event.message.text == "轉盤") {
-  //   return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
-  // }
-  // if (event.message.text == "Restaurant") {
-  //   return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
-  // }
-  // if (event.message.text == "中式餐廳") {
-  //   getCategoryArray("japanese")
-  //   return client.replyMessage(event.replyToken, replyMsg)
-  // }
 }
 
 // listen on port
