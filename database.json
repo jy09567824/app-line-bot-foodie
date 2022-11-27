@@ -4,7 +4,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
-      "size": "micro",
+      "size": "kilo",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -24,7 +24,7 @@
             "type": "text",
             "text": "小原田日本料理－公館店",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
