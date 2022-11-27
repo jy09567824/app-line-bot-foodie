@@ -206,8 +206,7 @@ const restaurantTypeMsgEN = {
     },
   },
 }
-const beforeCarouselMsgCH = { type: 'text', text: `以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！
-提示：點擊圖片查看店家資訊` }
+const beforeCarouselMsgCH = { type: 'text', text: '以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！（提示：點擊圖片查看店家資訊）' }
 const beforeCarouselMsgEN = { type: 'text', text: `Here are the 3 options for you.
 Click in the picture card to view the information.
 Have a nice meal & wish you a good day.` }
