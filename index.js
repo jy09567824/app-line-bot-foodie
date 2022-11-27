@@ -106,9 +106,8 @@ const restaurantTypeMsgCH = {
     },
   },
 }
-const beforeCarouselMsg = { type: 'text', text: `這邊是為您推薦的三個選項
-提示：點擊圖文選單可以參照地址
-祝您享用愉快、有個美好的一天！
+const beforeCarouselMsg = { type: 'text', text: `以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！
+
 Here are the 3 options for you.
 Click in the picture card to view the address.
 Have a nice meal & wish you a good day.
@@ -210,19 +209,20 @@ function handleEvent(event) {
       client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
       break;
     case "轉盤":
-      getRandomArray()
+      getRandomArray();
       client.replyMessage(event.replyToken, replyMsg);
       break;
     case "中式餐廳":
     case "中餐":
-      getCategoryArray("japanese")
-      client.replyMessage(event.replyToken, replyMsg)
+      getCategoryArray("japanese");
+      client.replyMessage(event.replyToken, replyMsg);
       break;
     case "日式餐廳":
     case "日本料理":
     case "日式":
-      getCategoryArray("japanese")
+      getCategoryArray("japanese");
       client.replyMessage(event.replyToken, beforeCarouselMsg);
+      client.replyMessage(event.replyToken, replyMsg);
       break;
   }
 }
