@@ -4,6 +4,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -50,6 +51,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -96,6 +98,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -142,6 +145,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -188,6 +192,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -234,6 +239,7 @@
     "category": "japanese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -280,6 +286,7 @@
     "category": "chinese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -326,6 +333,7 @@
     "category": "chinese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -372,6 +380,7 @@
     "category": "chinese",
     "message": {
       "type": "bubble",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
