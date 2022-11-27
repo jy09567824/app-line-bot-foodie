@@ -5,14 +5,6 @@ const rawdata = fs.readFileSync('./demodata.json')
 const restaurants = JSON.parse(rawdata)
 
 // Data 
-let carouselMsg = {
-  type: "flex",
-  altText: "carousel flex message",
-  contents: {
-    type: "carousel",
-    contents: []
-  }
-}
 
 let replyMsg = {}
 
@@ -21,7 +13,15 @@ function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3);
-    replyMsg = carouselMsg;
+    const carouselMsg = {
+      type: "flex",
+      altText: "carousel flex message",
+      contents: {
+        type: "carousel",
+        contents: []
+      }
+    }
+    replyMsg = carouselMsg
     carouselArray.forEach(element => {
       replyMsg.contents.contents.push(element.message)   
     }); 
@@ -151,11 +151,9 @@ function handleEvent(event) {
   if (event.message.text == "japanese") {
     getCategoryArray("japanese")
     console.log(replyMsg)
+    getCategoryArray("japanese")
+    console.log(replyMsg)
   }
-
-  // Echo 
-  // const echo = { type: "text", text: event.message.text };
-  // return client.replyMessage(event.replyToken, echo);
 }
 
 // 測試用：使用者留言，text: Japanese

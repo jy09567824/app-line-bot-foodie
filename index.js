@@ -6,15 +6,6 @@ const rawdata = fs.readFileSync('./database.json')
 const restaurants = JSON.parse(rawdata)
 
 // Data 
-let carouselMsg = {
-  type: "flex",
-  altText: "carousel flex message",
-  contents: {
-    type: "carousel",
-    contents: []
-  }
-}
-
 let replyMsg = {}
 
 const restaurantTypeMsgCH = {
@@ -131,6 +122,14 @@ function getRandomArrayElements(arr, count) {
 // 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 Reply 格式訊息
 function getCategoryArray(category) {
   try {
+    const carouselMsg = {
+      type: "flex",
+      altText: "carousel flex message",
+      contents: {
+        type: "carousel",
+        contents: []
+      }
+    }
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3);
     replyMsg = carouselMsg;
@@ -191,7 +190,6 @@ function handleEvent(event) {
     case "中餐":
       getCategoryArray("japanese")
       client.replyMessage(event.replyToken, replyMsg)
-      replyMsg = carouselMsg;
       break;
   }
 
