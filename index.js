@@ -108,7 +108,7 @@ const restaurantTypeMsgCH = {
 }
 const restaurantTypeMsgEN = {
   type: "flex",
-  altText: "Please choose your 請選擇您要的餐廳種類：中式餐廳、日式餐廳、西式⋯⋯",
+  altText: "Please choose your types of cuisine: Chinese Food, Japanese Food,⋯",
   contents: {
     type: "bubble",
     hero: {
@@ -117,7 +117,7 @@ const restaurantTypeMsgEN = {
       contents: [
         {
           type: "text",
-          text: "請點選您要的餐廳種類",
+          text: "Please choose your types of cuisine",
           style: "normal",
           decoration: "none",
           align: "center",
@@ -138,29 +138,29 @@ const restaurantTypeMsgEN = {
           contents: [
             {
               type: "image",
-              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_001.png",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_en_001.png",
               action: {
                 type: "message",
                 label: "action",
-                text: "中式餐廳",
+                text: "Chinese",
               },
             },
             {
               type: "image",
-              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_002.png",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_en_002.png",
               action: {
                 type: "message",
                 label: "action",
-                text: "日式餐廳",
+                text: "Japanese",
               },
             },
             {
               type: "image",
-              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_003.png",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_en_003.png",
               action: {
                 type: "message",
                 label: "action",
-                text: "西式餐廳",
+                text: "Western",
               },
             },
           ],
@@ -171,29 +171,29 @@ const restaurantTypeMsgEN = {
           contents: [
             {
               type: "image",
-              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_004.png",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_en_004.png",
               action: {
                 type: "message",
                 label: "action",
-                text: "咖啡廳",
+                text: "Coffee",
               },
             },
             {
               type: "image",
-              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_005.png",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_en_005.png",
               action: {
                 type: "message",
                 label: "action",
-                text: "美式餐廳",
+                text: "American",
               },
             },
             {
               type: "image",
-              url: "https://app-line-bot-foodie.herokuapp.com/images/list_ch_006.png",
+              url: "https://app-line-bot-foodie.herokuapp.com/images/list_en_006.png",
               action: {
                 type: "message",
                 label: "action",
-                text: "異國風味",
+                text: "Exotic",
               },
             },
           ],
@@ -300,27 +300,50 @@ function handleEvent(event) {
   } 
 
   switch (event.message.text) {
-    case "餐廳":
-      client.replyMessage(event.replyToken, restaurantTypeMsgCH);
-      break;
-    case "Restaurant":
-    case "restaurant":
-      client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
-      break;
     case "轉盤":
       getRandomArray();
-      client.replyMessage(event.replyToken, replyMsg);
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      break;
+    case "餐廳":
+      client.replyMessage(event.replyToken, restaurantTypeMsgCH);
       break;
     case "中式餐廳":
     case "中餐":
       getCategoryArray("chinese");
-      client.replyMessage(event.replyToken, replyMsg);
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
       break;
     case "日式餐廳":
     case "日本料理":
     case "日式":
       getCategoryArray("japanese");
       client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      break;
+    case "西式餐廳":
+    case "西式":
+    case "西餐":
+      getCategoryArray("western");
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      break;
+    case "咖啡廳":
+    case "咖啡":
+    case "咖啡店":
+      getCategoryArray("coffee");
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      break;
+    case "美式餐廳":
+    case "美式":
+      getCategoryArray("american");
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      break;
+    case "異國風味":
+    case "異國料理":
+    case "其他":
+      getCategoryArray("coffee");
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      break;
+    case "Restaurant":
+    case "restaurant":
+      client.replyMessage(event.replyToken, restaurantTypeMsgEN);
       break;
   }
 }
