@@ -34,13 +34,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Having the spirit of self-satisfaction, it is affiliated to Jingyuan with 100% authentic eel cuisine."
+                       "text":"Having the spirit of self-satisfaction, it is affiliated to Jingyuan with 100% authentic eel cuisine.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍2F, No. 277, Section 3, Roosevelt Road, Daan District, Taipei City"
+                 "text":"📍2F, No. 277, Section 3, Roosevelt Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -81,13 +86,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"A place suitable for drinking and eating skewers."
+                       "text":"A place suitable for drinking and eating skewers.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 271, Section 3, Tingzhou Road, Zhongzheng District, Taipei City"
+                 "text":"📍No. 271, Section 3, Tingzhou Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -128,13 +138,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"A brand specializing in creative Japanese rice bowls, adhering to the spirit of Japanese craftsmen, and operating locally with heart."
+                       "text":"A brand specializing in creative Japanese rice bowls, adhering to the spirit of Japanese craftsmen, and operating locally with heart.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 277-1, Section 3, Roosevelt Road, Daan District, Taipei City"
+                 "text":"📍No. 277-1, Section 3, Roosevelt Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -175,13 +190,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Chinese restaurant with many dishes."
+                       "text":"Chinese restaurant with many dishes.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 281, Section 3, Tingzhou Road, Zhongzheng District, Taipei City"
+                 "text":"📍No. 281, Section 3, Tingzhou Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -222,13 +242,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Authentic Sichuan cuisine."
+                       "text":"Authentic Sichuan cuisine.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 10, Alley 8, Lane 316, Section 3, Roosevelt Road, Zhongzheng District, Taipei City"
+                 "text":"📍No. 10, Alley 8, Lane 316, Section 3, Roosevelt Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -269,13 +294,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Traditional Hong Kong-style Dim Sum Tea House."
+                       "text":"Traditional Hong Kong-style Dim Sum Tea House.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 16, Lane 286, Section 3, Roosevelt Road, Zhongzheng District, Taipei City"
+                 "text":"📍No. 16, Lane 286, Section 3, Roosevelt Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -316,13 +346,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Elegant retro restaurant with antique decorations serving traditional Russian food."
+                       "text":"Elegant retro restaurant with antique decorations serving traditional Russian food.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 14, Lane 333, Section 3, Roosevelt Road, Daan District, Taipei City"
+                 "text":"📍No. 14, Lane 333, Section 3, Roosevelt Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -363,13 +398,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Unpretentious café with terrace serving classic exotic cuisine and afternoon tea."
+                       "text":"Unpretentious café with terrace serving classic exotic cuisine and afternoon tea.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 2, Alley 1, Lane 74, Wenzhou Street, Daan District, Taipei City"
+                 "text":"📍No. 2, Alley 1, Lane 74, Wenzhou Street, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -410,13 +450,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"A casual eatery serving traditional Malaysian dishes like laksa and nasi lemak."
+                       "text":"A casual eatery serving traditional Malaysian dishes like laksa and nasi lemak.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 10, Lane 284, Section 3, Roosevelt Road, Zhongzheng District, Taipei City"
+                 "text":"📍No. 10, Lane 284, Section 3, Roosevelt Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -457,13 +502,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"An exquisite restaurant with a warm atmosphere and a terrace, serving Western-style meals, refreshments and drinks."
+                       "text":"An exquisite restaurant with a warm atmosphere and a terrace, serving Western-style meals, refreshments and drinks.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 30, Lane 14, Lane 283, Section 3, Roosevelt Road, Daan District, Taipei City"
+                 "text":"📍No. 30, Lane 14, Lane 283, Section 3, Roosevelt Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -504,13 +554,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"The founder started to operate the first German restaurant 22 years ago. The authentic taste and selected healthy ingredients have won the support of customers. He has also operated a German-style bread bakery and a super food concept restaurant."
+                       "text":"The founder started to operate the first German restaurant 22 years ago. The authentic taste and selected healthy ingredients have won the support of customers. He has also operated a German-style bread bakery and a super food concept restaurant.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 30, Section 1, Xinhai Road, Daan District, Taipei City"
+                 "text":"📍No. 30, Section 1, Xinhai Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -551,13 +606,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Italian dishes are presented in the form of set meals, with a wide variety of meals."
+                       "text":"Italian dishes are presented in the form of set meals, with a wide variety of meals.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 8, Lane 60, Section 3, Xinsheng South Road, Daan District, Taipei City"
+                 "text":"📍No. 8, Lane 60, Section 3, Xinsheng South Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -598,13 +658,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Affordable American meals, including pasta set, rice stew set, American hamburger set, etc."
+                       "text":"Affordable American meals, including pasta set, rice stew set, American hamburger set, etc.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 41, Lane 118, Section 2, Heping East Road, Daan District, Taipei City"
+                 "text":"📍No. 41, Lane 118, Section 2, Heping East Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -645,13 +710,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Taipei Mansion smoke-free casual sports bar, American restaurant, draft beer, Taipei Mansion Night Market, dinner party in Taipei Zhongzheng District, Beer Pong, dart board, must-visit secret places for Internet celebrities, 100 creative cocktails, 120-inch screen, football World Cup"
+                       "text":"Taipei Mansion smoke-free casual sports bar, American restaurant, draft beer, Taipei Mansion Night Market, dinner party in Taipei Zhongzheng District, Beer Pong, dart board, must-visit secret places for Internet celebrities, 100 creative cocktails, 120-inch screen, football World Cup",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍2nd Floor, No. 134, Section 4, Roosevelt Road, Zhongzheng District, Taipei City"
+                 "text":"📍2nd Floor, No. 134, Section 4, Roosevelt Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -692,13 +762,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Daily limited hand-patted hamburger meat, thick portion with juicy and non-greasy taste."
+                       "text":"Daily limited hand-patted hamburger meat, thick portion with juicy and non-greasy taste.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍2F, No. 293, Section 3, Tingzhou Road, Zhongzheng District, Taipei City"
+                 "text":"📍2F, No. 293, Section 3, Tingzhou Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -739,13 +814,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Relaxing cafe environment, refreshments such as pie and coffee are worth trying."
+                       "text":"Relaxing cafe environment, refreshments such as pie and coffee are worth trying.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 75, Wenzhou Street, Daan District, Taipei City"
+                 "text":"📍No. 75, Wenzhou Street, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -786,13 +866,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Wenshan Coffee only presents the most perfect, delicate, rich and varied delicious coffee to customers."
+                       "text":"Wenshan Coffee only presents the most perfect, delicate, rich and varied delicious coffee to customers.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍No. 11-1, Lane 56, Section 3, Xinsheng South Road, Daan District, Taipei City"
+                 "text":"📍No. 11-1, Lane 56, Section 3, Xinsheng South Road, Daan District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
@@ -833,13 +918,18 @@
                  "contents":[
                     {
                        "type":"text",
-                       "text":"Relaxed, minimalist restaurant specializing in baked goods and coffee drinks."
+                       "text":"Relaxed, minimalist restaurant specializing in baked goods and coffee drinks.",
+                       "wrap": true,
+                       "maxLines": 2
                     }
                  ]
               },
               {
                  "type":"text",
-                 "text":"📍1st Floor, No. 4, Alley 4, Lane 286, Section 3, Roosevelt Road, Zhongzheng District, Taipei City"
+                 "text":"📍1st Floor, No. 4, Alley 4, Lane 286, Section 3, Roosevelt Road, Zhongzheng District, Taipei City",
+                 "wrap": true,
+                 "margin": "md",
+                 "size": "sm"
               }
            ]
         }
