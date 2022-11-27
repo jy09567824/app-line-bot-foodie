@@ -8,7 +8,6 @@ const restaurantsCH = JSON.parse(rawdataCH)
 const rawdataEN = fs.readFileSync('./database_en.json')
 const restaurantsEN = JSON.parse(rawdataEN)
 
-
 const restaurantTypeMsgCH = {
   type: "flex",
   altText: "請選擇您要的餐廳種類：中式餐廳、日式餐廳、西式⋯⋯",
@@ -212,6 +211,7 @@ const beforeCarouselMsgCH = { type: 'text', text: `以下為您推薦三間餐�
 const beforeCarouselMsgEN = { type: 'text', text: `Here are the 3 options for you.
 Click in the picture card to view the information.
 Have a nice meal & wish you a good day.` }
+const wheelMsg = { type: 'text', text: '等下吃這間！' }
 
 let replyMsg = {}
 
@@ -247,7 +247,7 @@ function getCategoryArray(category, database) {
     console.log(error)
   }
 }
-// 轉盤功能，隨機推薦 3 筆餐廳
+// 轉盤功能，隨機推薦 1 筆餐廳
 function getRandomArray() {
   try {
     const carouselMsg = {
@@ -258,7 +258,7 @@ function getRandomArray() {
         contents: []
       }
     }
-    let carouselArray = getRandomArrayElements(restaurantsCH, 3);
+    let carouselArray = getRandomArrayElements(restaurantsCH, 1);
     replyMsg = carouselMsg;
     carouselArray.forEach(element => {
       replyMsg.contents.contents.push(element.message)   
@@ -305,7 +305,7 @@ function handleEvent(event) {
   switch (event.message.text) {
     case "轉盤":
       getRandomArray();
-      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
+      client.replyMessage(event.replyToken, [wheelMsg, replyMsg]);
       break;
     case "餐廳":
       client.replyMessage(event.replyToken, restaurantTypeMsgCH);
