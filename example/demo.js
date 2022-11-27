@@ -417,6 +417,7 @@ function handleEvent(event) {
 
   if (event.message.text == "japanese") {
     getCategoryArray("japanese")
+    
   }
 
   // Echo 
