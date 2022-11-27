@@ -1,10 +1,10 @@
 [
-{
+  {
     "no": 1,
     "category": "japanese",
     "message": {
       "type": "bubble",
-      "size": "kilo",
+      "size": "micro",
       "hero": {
         "type": "image",
         "url": "https://lh5.googleusercontent.com/p/AF1QipNt38MQLRMr5iGWP5IJSscz-ZhSG8AQoR_xoRxb=w256-h256-k-no-p",
@@ -13,7 +13,7 @@
         "aspectMode": "cover",
         "action": {
           "type": "uri",
-          "uri": "http://linecorp.com/"
+          "uri": "https://g.page/oharuda0012017?share"
         }
       },
       "body": {
@@ -22,9 +22,9 @@
         "contents": [
           {
             "type": "text",
-            "text": "111 Brown Cafe",
+            "text": "小原田日本料理－公館店",
             "weight": "bold",
-            "size": "lg"
+            "size": "xl"
           },
           {
             "type": "box",
@@ -34,13 +34,13 @@
             "contents": [
               {
                 "type": "text",
-                "text": "Description of Restaurant"
+                "text": "秉持職人味自慢的精神，以100%神還原的道地鰻魚料理打響招牌，隸屬於京源。"
               }
             ]
           },
           {
             "type": "text",
-            "text": "📍location"
+            "text": "📍台北市大安區羅斯福路三段277號2F"
           }
         ]
       }
