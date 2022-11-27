@@ -133,6 +133,7 @@ function getCategoryArray(category) {
   try {
     const filterData = restaurants.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3);
+    replyMsg = carouselMsg;
     carouselArray.forEach(element => {
       replyMsg.contents.contents.push(element.message)   
     }); 
@@ -190,7 +191,7 @@ function handleEvent(event) {
     case "中餐":
       getCategoryArray("japanese")
       client.replyMessage(event.replyToken, replyMsg)
-      replyMsg = carouselMsg
+      replyMsg = carouselMsg;
       break;
   }
 
