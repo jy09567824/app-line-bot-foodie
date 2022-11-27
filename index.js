@@ -2,11 +2,13 @@ const line = require('@line/bot-sdk');
 const express = require('express');
 const fs = require('fs');
 
-const rawdata = fs.readFileSync('./database.json')
-const restaurants = JSON.parse(rawdata)
-
 // Data 
-let replyMsg = {}
+const rawdataCH = fs.readFileSync('./database.json')
+const restaurantsCH = JSON.parse(rawdataCH)
+const rawdataEN = fs.readFileSync('./database_en.json')
+const restaurantsEN = JSON.parse(rawdataEN)
+
+
 const restaurantTypeMsgCH = {
   type: "flex",
   altText: "請選擇您要的餐廳種類：中式餐廳、日式餐廳、西式⋯⋯",
@@ -205,12 +207,13 @@ const restaurantTypeMsgEN = {
     },
   },
 }
-const beforeCarouselMsg = { type: 'text', text: `以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！
-提示：點擊圖片查看店家資訊
-
-Here are the 3 options for you.
+const beforeCarouselMsgCH = { type: 'text', text: `以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！
+提示：點擊圖片查看店家資訊` }
+const beforeCarouselMsgEN = { type: 'text', text: `Here are the 3 options for you.
 Click in the picture card to view the information.
 Have a nice meal & wish you a good day.` }
+
+let replyMsg = {}
 
 // 從陣列中隨機取出 n 筆元素
 function getRandomArrayElements(arr, count) {
@@ -224,7 +227,7 @@ function getRandomArrayElements(arr, count) {
   return shuffled.slice(min);
 }
 // 查詢 data 資料中餐廳類別為 "..." 的餐廳，並隨機產生 3 筆 Reply 格式訊息
-function getCategoryArray(category) {
+function getCategoryArray(category, database) {
   try {
     const carouselMsg = {
       type: "flex",
@@ -234,7 +237,7 @@ function getCategoryArray(category) {
         contents: []
       }
     }
-    const filterData = restaurants.filter(restaurant => restaurant.category == category)
+    const filterData = database.filter(restaurant => restaurant.category == category)
     let carouselArray = getRandomArrayElements(filterData, 3);
     replyMsg = carouselMsg;
     carouselArray.forEach(element => {
@@ -255,7 +258,7 @@ function getRandomArray() {
         contents: []
       }
     }
-    let carouselArray = getRandomArrayElements(restaurants, 3);
+    let carouselArray = getRandomArrayElements(restaurantsCH, 3);
     replyMsg = carouselMsg;
     carouselArray.forEach(element => {
       replyMsg.contents.contents.push(element.message)   
@@ -302,44 +305,44 @@ function handleEvent(event) {
   switch (event.message.text) {
     case "轉盤":
       getRandomArray();
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "餐廳":
       client.replyMessage(event.replyToken, restaurantTypeMsgCH);
       break;
     case "中式餐廳":
     case "中餐":
-      getCategoryArray("chinese");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      getCategoryArray("chinese", restaurantsCH);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "日式餐廳":
     case "日本料理":
     case "日式":
-      getCategoryArray("japanese");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      getCategoryArray("japanese", restaurantsCH);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "西式餐廳":
     case "西式":
     case "西餐":
-      getCategoryArray("western");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      getCategoryArray("western", restaurantsCH);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "咖啡廳":
     case "咖啡":
     case "咖啡店":
-      getCategoryArray("cafe");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      getCategoryArray("cafe", restaurantsCH);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "美式餐廳":
     case "美式":
-      getCategoryArray("american");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      getCategoryArray("american", restaurantsCH);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "異國風味":
     case "異國料理":
     case "其他":
-      getCategoryArray("exotic");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
+      getCategoryArray("exotic", restaurantsCH);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgCH, replyMsg]);
       break;
     case "Restaurant":
     case "restaurant":
