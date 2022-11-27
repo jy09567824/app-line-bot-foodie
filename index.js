@@ -106,7 +106,7 @@ const restaurantTypeMsgCH = {
     },
   },
 }
-const beforeCarouselMsg = { type: 'text', text: `以下為您推薦三間${events.message.text}餐廳，祝您享用愉快、有個美好的一天！
+const beforeCarouselMsg = { type: 'text', text: `以下為您推薦三間${this.event.message.text}餐廳，祝您享用愉快、有個美好的一天！
 提示：點擊圖片查看店家資訊
 
 Here are the 3 options for you.
