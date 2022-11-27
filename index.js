@@ -106,7 +106,7 @@ const restaurantTypeMsgCH = {
     },
   },
 }
-const beforeCarouselMsg = { type: 'text', text: `以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！
+const beforeCarouselMsg = { type: 'text', text: `以下為您推薦三間${events.message.text}餐廳，祝您享用愉快、有個美好的一天！
 提示：點擊圖片查看店家資訊
 
 Here are the 3 options for you.
@@ -214,14 +214,14 @@ function handleEvent(event) {
       break;
     case "中式餐廳":
     case "中餐":
-      getCategoryArray("japanese");
+      getCategoryArray("chinese");
       client.replyMessage(event.replyToken, replyMsg);
       break;
     case "日式餐廳":
     case "日本料理":
     case "日式":
       getCategoryArray("japanese");
-      client.replyMessage(event.replyToken, [beforeCarouselMsg,replyMsg]);
+      client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
       break;
   }
 }
