@@ -327,7 +327,7 @@ function handleEvent(event) {
     case "咖啡廳":
     case "咖啡":
     case "咖啡店":
-      getCategoryArray("coffee");
+      getCategoryArray("cafe");
       client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
       break;
     case "美式餐廳":
@@ -338,7 +338,7 @@ function handleEvent(event) {
     case "異國風味":
     case "異國料理":
     case "其他":
-      getCategoryArray("coffee");
+      getCategoryArray("exotic");
       client.replyMessage(event.replyToken, [beforeCarouselMsg, replyMsg]);
       break;
     case "Restaurant":
