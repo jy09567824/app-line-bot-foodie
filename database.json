@@ -24,7 +24,7 @@
             "type": "text",
             "text": "111 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -71,7 +71,7 @@
             "type": "text",
             "text": "222 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -118,7 +118,7 @@
             "type": "text",
             "text": "333 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -165,7 +165,7 @@
             "type": "text",
             "text": "444 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -212,7 +212,7 @@
             "type": "text",
             "text": "555 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -259,7 +259,7 @@
             "type": "text",
             "text": "666 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -306,7 +306,7 @@
             "type": "text",
             "text": "777 Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -353,7 +353,7 @@
             "type": "text",
             "text": "Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
@@ -400,7 +400,7 @@
             "type": "text",
             "text": "Brown Cafe",
             "weight": "bold",
-            "size": "xl"
+            "size": "lg"
           },
           {
             "type": "box",
