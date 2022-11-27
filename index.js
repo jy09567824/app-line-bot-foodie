@@ -178,18 +178,21 @@ function handleEvent(event) {
 
   switch (event.message.text) {
     case "餐廳":
-      return client.replyMessage(event.replyToken, restaurantTypeMsg);
+      client.replyMessage(event.replyToken, restaurantTypeMsg);
+      break;
     case "Restaurant":
     case "restaurant":
-      return client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
+      client.replyMessage(event.replyToken, { type: 'text', text: `It's restaurant` });
+      break;
     case "轉盤":
-      return client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
+      client.replyMessage(event.replyToken, { type: 'text', text: '這是轉盤' });
+      break;
     case "中式餐廳":
     case "中餐":
       getCategoryArray("japanese")
       client.replyMessage(event.replyToken, replyMsg)
       replyMsg = {}
-      return 
+      break;
   }
 
   // if (event.message.text == "餐廳") {
