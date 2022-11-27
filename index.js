@@ -110,7 +110,7 @@ const restaurantTypeMsgCH = {
 }
 const restaurantTypeMsgEN = {
   type: "flex",
-  altText: "Please choose your types of cuisine: Chinese Food, Japanese Food,⋯",
+  altText: "Choose the type you into: Chinese Food, Japanese Food,⋯",
   contents: {
     type: "bubble",
     hero: {
@@ -119,12 +119,12 @@ const restaurantTypeMsgEN = {
       contents: [
         {
           type: "text",
-          text: "Please choose your types of cuisine",
+          text: "Choose the type you into",
           style: "normal",
           decoration: "none",
           align: "center",
           weight: "bold",
-          size: "lg",
+          size: "md",
           margin: "xxl",
         },
       ],
@@ -347,6 +347,38 @@ function handleEvent(event) {
     case "Restaurant":
     case "restaurant":
       client.replyMessage(event.replyToken, restaurantTypeMsgEN);
+      break;
+    case "Chinese":
+    case "chinese":
+      getCategoryArray("chinese", restaurantsEN);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
+      break;
+    case "Japanese":
+    case "japanese":
+      getCategoryArray("japanese", restaurantsEN);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
+      break;
+    case "Western":
+    case "western":
+      getCategoryArray("western", restaurantsEN);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
+      break;
+    case "Cafe":
+    case "cafe":
+    case "Coffee":
+    case "coffee":
+      getCategoryArray("cafe", restaurantsEN);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
+      break;
+    case "American":
+    case "american":
+      getCategoryArray("american", restaurantsEN);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
+      break;
+    case "Exotic":
+    case "exotic":
+      getCategoryArray("exotic", restaurantsEN);
+      client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
       break;
   }
 }
