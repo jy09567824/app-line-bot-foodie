@@ -119,7 +119,7 @@ const restaurantTypeMsgEN = {
       contents: [
         {
           type: "text",
-          text: "Choose the type you into",
+          text: "Choose The Type You Into",
           style: "normal",
           decoration: "none",
           align: "center",
