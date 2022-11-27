@@ -357,7 +357,6 @@ function handleEvent(event) {
     case "japanese":
       getCategoryArray("japanese", restaurantsEN);
       client.replyMessage(event.replyToken, [beforeCarouselMsgEN, replyMsg]);
-      setTimeout(1000)
       break;
     case "Western":
     case "western":
