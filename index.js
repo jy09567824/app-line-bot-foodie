@@ -252,7 +252,7 @@ function getRandomArray() {
   try {
     const carouselMsg = {
       type: "flex",
-      altText: "carousel flex message",
+      altText: "美食救星分享了一則餐廳資訊，等下就吃這間吧！",
       contents: {
         type: "carousel",
         contents: []
