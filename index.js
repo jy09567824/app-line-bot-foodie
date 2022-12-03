@@ -208,9 +208,7 @@ const restaurantTypeMsgEN = {
 }
 const beforeCarouselMsgCH = { type: 'text', text: `以下為您推薦三間餐廳，祝您享用愉快、有個美好的一天！
 (提示：點擊圖片查看店家資訊)` }
-const beforeCarouselMsgEN = { type: 'text', text: `Here are the 3 options for you.
-Click in the picture card to view the information.
-Have a nice meal & wish you a good day.` }
+const beforeCarouselMsgEN = { type: 'text', text: `食物救星分享了三則餐廳資訊，等下就從這幾間裡挑想吃的吧！` }
 const wheelMsg = { type: 'text', text: '等下吃這間！' }
 
 let replyMsg = {}
@@ -252,7 +250,7 @@ function getRandomArray() {
   try {
     const carouselMsg = {
       type: "flex",
-      altText: "美食救星分享了一則餐廳資訊，等下就吃這間吧！",
+      altText: "食物救星分享了一則餐廳資訊，等下就吃這間吧！",
       contents: {
         type: "carousel",
         contents: []
